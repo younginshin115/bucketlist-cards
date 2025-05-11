@@ -3,8 +3,10 @@ import ProgressBar from "./components/ProgressBar";
 import CardGrid from "./components/CardGrid";
 import { ChecklistItem } from "./types";
 import axios from "axios";
+import LoadingScreen from "./components/LoadingScreen";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [checklist, setChecklist] = useState<ChecklistItem[]>([]);
 
   useEffect(() => {
@@ -17,6 +19,8 @@ const App = () => {
         setChecklist(res.data);
       } catch (err) {
         console.error("Failed to fetch checklist:", err);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -45,6 +49,10 @@ const App = () => {
       console.error("Failed to update checklist item:", err);
     }
   };
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className="w-full h-full bg-gray-100">
