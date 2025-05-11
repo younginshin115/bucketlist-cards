@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProgressBar from './components/ProgressBar';
-import Card from './components/Card';
+import CardGrid from './components/CardGrid';
 
-function App() {
+const App = () => {
+  const [cardStates, setCardStates] = useState(Array(100).fill(false));
+
+  const handleToggle = (id: number) => {
+    setCardStates(prev =>
+      prev.map((val, i) => (i === id - 1 ? !val : val))
+    );
+  };
+
   return (
-    <div className="p-8">
+    <div className="max-w-screen-lg mx-auto px-4 py-8 bg-gray-100">
       <h1 className="text-3xl font-bold">Checklist</h1>
       <ProgressBar />
-      <Card />
+      <CardGrid cardStates={cardStates} onToggle={handleToggle} />
     </div>
   );
 }
