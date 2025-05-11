@@ -47,10 +47,14 @@ const App = () => {
   };
 
   return (
-    <div className="w-full max-w-screen-lg mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold">Checklist</h1>
-      <ProgressBar checklist={checklist} />
-      <CardGrid checklist={checklist} onToggle={handleToggle} />
+    <div className="w-full h-full bg-gray-100">
+      <div className="w-full h-full bg-white max-w-screen-lg mx-auto md:px-16 px-8 py-8">
+        <h1 className="text-3xl font-bold uppercase text-center py-12">
+          Checklist
+        </h1>
+        <ProgressBar checklist={checklist} />
+        <CardGrid checklist={checklist} onToggle={handleToggle} />
+      </div>
     </div>
   );
 };
