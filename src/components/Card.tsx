@@ -28,7 +28,7 @@ const Card = ({
           }
         `}
     >
-      <div className="flex items-center h-full text-sm font-medium text-gray-800">
+      <div className="flex items-center h-full text-sm font-medium text-gray-800 word-wrap-only-space">
         {title}
       </div>
     </div>

@@ -12,3 +12,8 @@ body {
 
 @source inline('border-{red,orange,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,fuchsia,pink,rose,purple,stone,zinc,gray}-300');
 @source inline('bg-{red,orange,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,fuchsia,pink,rose,purple,stone,zinc,gray}-100');
+
+.word-wrap-only-space {
+  white-space: normal;
+  word-break: keep-all;     /* 단어 단위 줄바꿈 (띄어쓰기 기준) */
+}
