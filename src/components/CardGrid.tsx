@@ -34,7 +34,7 @@ type CardGridProps = {
 
 const CardGrid = ({ checklist, onToggle }: CardGridProps) => {
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid md:grid-cols-4 gap-4">
       {checklist.map((item, index) => {
         const row = Math.floor(index / 8);
         const colorIndex = row % colorNames.length;
