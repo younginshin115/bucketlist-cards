@@ -11,3 +11,4 @@ body {
 }
 
 @source inline('border-{red,orange,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,fuchsia,pink,rose,purple,stone,zinc,gray}-300');
+@source inline('bg-{red,orange,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,fuchsia,pink,rose,purple,stone,zinc,gray}-100');
