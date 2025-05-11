@@ -6,17 +6,29 @@ type CardProps = {
   isChecked: boolean;
   onToggle: (id: number) => void;
   bgColor: string;
+  borderColor: string;
 };
 
-const Card = ({ id, title, isChecked, onToggle, bgColor }: CardProps) => {
+const Card = ({
+  id,
+  title,
+  isChecked,
+  onToggle,
+  bgColor,
+  borderColor,
+}: CardProps) => {
   return (
     <div
-      className={`w-full h-20 rounded-xl px-4 py-2 cursor-pointer border transition duration-300 
-        ${isChecked ? "opacity-70" : ""}
-        ${bgColor}`}
       onClick={() => onToggle(id)}
+      className={`w-full h-20 px-7 rounded-xl cursor-pointer transition duration-300 
+          ${
+            isChecked
+              ? `${bgColor} border ${borderColor} inset-shadow-xs hover:inset-shadow-sm`
+              : "bg-white border border-gray-200 shadow-sm hover:shadow-md"
+          }
+        `}
     >
-      <div className="flex items-center justify-center h-full text-center text-sm font-medium px-2">
+      <div className="flex items-center h-full text-sm font-medium text-gray-800">
         {title}
       </div>
     </div>
