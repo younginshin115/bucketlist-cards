@@ -49,7 +49,7 @@ const App = () => {
   return (
     <div className="w-full max-w-screen-lg mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold">Checklist</h1>
-      <ProgressBar />
+      <ProgressBar checklist={checklist} />
       <CardGrid checklist={checklist} onToggle={handleToggle} />
     </div>
   );
